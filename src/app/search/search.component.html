@@ -1,0 +1,18 @@
+<form>
+  <div class="_form-field">
+    <input placeholder="Departure" class="_rinput" type="text" name="departure">
+    <div class="_autocomplete" *ngIf="false">
+      <app-list [airports]=""></app-list>
+    </div>
+  </div>
+  <div class="_form-field">
+    <input placeholder="Destination" class="_rinput" type="text" name="destination">
+    <div class="_autocomplete" *ngIf="false">
+      <app-list [airports]=""></app-list>
+    </div>
+  </div>
+  <input class="_rinput" type="date" name="departureDate">
+  <input class="_rinput" type="date" name="returnDate">
+  <button class="_rbutton">Search</button>
+</form>
+<router-outlet></router-outlet>

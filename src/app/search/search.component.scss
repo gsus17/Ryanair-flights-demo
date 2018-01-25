@@ -1,0 +1,26 @@
+@import 'src/styles.scss';
+
+._form-field {
+  position: relative;
+}
+
+._rinput {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+._rbutton {
+  width: 100%;
+  background-color: $secondary;
+  color: $primary;
+  font-size: 1.2rem;
+  border-radius: 2px;
+}
+
+._autocomplete {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  border: 1px solid black;
+}

@@ -1,27 +1,40 @@
-# RyanairFrontendTest
+Thank you for your time that you are willing to invest in our interview process.
+We appreciate your effort and hope you will enjoy this small project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
+The technical assignment consist of developing/enhancing a small web application
+that will let the user search for the cheapest flights in Europe.
 
-## Development server
+You can have a look at our flight selector in our homepage www.ryanair.com to understand how
+this works.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Remember that not all destinations are available for a specific departure airport.
 
-## Code scaffolding
+There are some key requirements that the applications needs to have:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
 
-## Build
+* No external library, except the libraries already present in the
+  package.json.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* Gracefully handle errors.
 
-## Running unit tests
+  Shit happens so the users needs to be informed that
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Mobile first design
+* Using Ryanair palette ( colors included in styles.scss )
 
-## Running end-to-end tests
+### Mid/Senior position ( only )
+  
+* Accessibility concerns - the whole form should work without using the mouse
+* Lazy loading unnecessary modules
+* Reactive forms - Usage of reactive forms
+* Performance mindset ( assets )
+* One way dataflow, all data should follow a one way dataflow approach.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Show us the best you can do!
 
-## Further help
+## Workflow
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Fork the project on gitlab
+* Do your magic, commits messages and style will be also evaluated
+* Share your fork with @fortunatof_ryanair ( Reporter access )

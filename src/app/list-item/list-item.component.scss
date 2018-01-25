@@ -1,0 +1,12 @@
+@import 'src/styles.scss';
+
+:host {
+  display: block;
+  border-bottom: 2px solid grey;
+  overflow: hidden;
+  padding: 0.7rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $primary;
+  font-weight: bold;
+}
