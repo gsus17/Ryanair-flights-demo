@@ -30,6 +30,7 @@ There are some key requirements that the applications needs to have:
 * Reactive forms - Usage of reactive forms
 * Performance mindset ( assets )
 * One way dataflow, all data should follow a one way dataflow approach.
+* Unit tests - At least one component and one service should be tested.
 
 Show us the best you can do!
 
@@ -37,4 +38,7 @@ Show us the best you can do!
 
 * Fork the project on gitlab
 * Do your magic, commits messages and style will be also evaluated
-* Share your fork with @fortunatof_ryanair ( Reporter access )
+* Share your fork with
+
+    * @fortunatof_ryanair ( Reporter access )
+    * @sanchezjl ( Reporter access )
