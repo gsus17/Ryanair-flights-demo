@@ -16,9 +16,7 @@ There are some key requirements that the applications needs to have:
 * No external library, except the libraries already present in the
   package.json.
 
-* Gracefully handle errors.
-
-  Shit happens so the users needs to be informed that
+* Gracefully handle errors. Shit happens so the users needs to be informed
 
 * Mobile first design
 * Using Ryanair palette ( colors included in styles.scss )
