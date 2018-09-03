@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-flight-list',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlightListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    console.log(`${FlightListComponent.name}::ctor`);
+
+  }
 
   ngOnInit() {
+
   }
 
 }

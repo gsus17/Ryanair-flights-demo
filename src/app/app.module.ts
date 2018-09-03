@@ -5,8 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { appRoutes } from './app-routes-config';
-import { SearchModule } from './flights/search/search.module';
 import { FlightsModule } from './flights/flights.module';
+import { ApiModule } from '../api/api.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import { FlightsModule } from './flights/flights.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ApiModule,
     FlightsModule,
     RouterModule.forRoot(appRoutes)
   ],
