@@ -4,22 +4,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
-import { SearchComponent } from './search/search.component';
-import { ListItemComponent } from './list-item/list-item.component';
-import { ListComponent } from './list/list.component';
+import { appRoutes } from './app-routes-config';
+import { SearchModule } from './flights/search/search.module';
+import { FlightsModule } from './flights/flights.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchComponent,
-    ListItemComponent,
-    ListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    FlightsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
