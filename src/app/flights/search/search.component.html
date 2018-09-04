@@ -1,3 +1,95 @@
-<p (click)="redirect()">
-  search works!
-</p>
+<div fxLayout="column" fxFlex>
+  <header fxLayout="row" fxFlex fxLayoutAlign="start center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <img fxLayout="row" fxLayoutAlign="start center" class="ryanair-logo" src="../assets/images/ryanair-logo.svg">
+    </div>
+  </header>
+
+  <section fxLayout="column">
+    <ng-container>
+      <form fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column" fxFlex class="search-box-container" fxLayoutGap="20px">
+          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+            <input type="radio" name="rountrip" value="idavuelta" checked [(ngModel)]="model.rountrip"> <span class="option-radio">Ida/vuelta</span><br>
+            <input type="radio" name="ida" value="ida"> <span class="option-radio">Ida</span><br>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="route-container" fxLayout="row" fxFlex="75" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column" fxLayoutAlign="center start" (click)="openPanel('from')">
+                  <span>De</span>
+                  <input class="input-city" type="text" name="from" placeholder="Aeropuerto de Origen" [(ngModel)]="model.from.name">
+                </div>
+              </div>
+              <div fxLayout="row" fxFlex="10" fxLayoutAlign="center center">
+                <div class="change-destination" ng-class="{'refresh-animation':$ctrl.viewdata.inProgress }">
+                  <img fxLayout="row" fxLayoutAlign="start center" src="../assets/images/change-destination-icon.svg">
+                </div>
+              </div>
+              <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column" fxLayoutAlign="center start" (click)="openPanel('to')">
+                  <span>Hasta</span>
+                  <input class="input-city" type="text" name="to" placeholder="Aeropuerto de destino" [(ngModel)]="model.to.name">
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end center">
+              <button  [disabled]="!checkAirports()" (click)="openSecondSection()" *ngIf="!showSecondSection()">Continuar</button>
+            </div>
+          </div>
+          <div *ngIf="showPanel()" class="pane" fxLayout="row">
+            <div fxLayout="column" fxLayoutAlign="start start" fxFlex="70">
+              <div>
+                <span class="pane-title">
+                  Eliga un pais
+                </span>
+              </div>
+              <div *ngFor="let countrie of viewdata.countries">
+                <span [ngClass]="{'country-selected' : countryIsSelected(countrie.name)}" (click)="searchAirports(countrie.name)">{{countrie.name}}</span>
+              </div>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="start start" fxFlex="30">
+              <div>
+                <span class="pane-title">
+                  Elegir aeropuerto
+                </span>
+              </div>
+              <div *ngFor="let airport of viewdata.airportsByIatacode">
+                <span (click)="selectAirport(airport)">{{airport.name}}</span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="showSecondSection()" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="route-container" fxFlex="75" fxLayout="row" fxLayoutAlign="space-between center">
+              <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column" fxLayoutAlign="center start">
+                  <span>Fecha de ida</span>
+                  <input type="date" class="input-city" id="dateFrom" [ngModel]="model.dateFrom | date:'yyyy-MM-dd'"
+                    (ngModelChange)="model.dateFrom  = $event" name="dateFrom">
+                </div>
+              </div>
+
+              <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column" fxLayoutAlign="center start">
+                  <span>Fecha de vuelta</span>
+                  <input type="date" class="input-city" id="dateTo" [ngModel]="model.dateTo | date:'yyyy-MM-dd'"
+                    (ngModelChange)="model.dateTo = $event" name="dateTo">
+                </div>
+              </div>
+              <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <div fxLayout="column" fxLayoutAlign="center start">
+                  <span>Pasajeros</span>
+                  <input class="input-city" type="number" name="passengers" placeholder="2" [(ngModel)]="model.passengers">
+                </div>
+              </div>
+            </div>
+
+            <div fxLayout="row" fxFlex="15" fxLayoutAlign="end center">
+              <button (click)="redirect()">Vamos</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </ng-container>
+  </section>
+</div>

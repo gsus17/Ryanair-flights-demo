@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from '../../api/api.service';
 import { FlightResquest } from '../../api/entitys/flight-resquest';
 import { FlightModel } from './results/flight.model';
+import { AirportsResponse } from '../../api/entitys/airports-response';
 
 @Injectable()
 export class FlightsManagerService {
@@ -12,12 +13,23 @@ export class FlightsManagerService {
 
     }
 
-    public getAirports() {
+    /**
+     * Return a Arport list.
+     * @returns
+     * @memberof FlightsManagerService
+     */
+    public getAirports(): Promise<void | AirportsResponse> {
         console.log(`${FlightsManagerService.name}::getAirports`);
 
         return this.apiService.apiAirport().getAirports();
     }
 
+    /**
+     * Return a Arport list.
+     * @param {FlightModel} flightModel
+     * @returns
+     * @memberof FlightsManagerService
+     */
     public getFlights(flightModel: FlightModel) {
         console.log(`${FlightsManagerService.name}::getFlights`);
         const flightResquest: FlightResquest = this.mapToFlightRequest(flightModel);

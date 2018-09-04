@@ -39,12 +39,24 @@ export class ResultsComponent implements OnInit {
           passengers: parseInt(params['id']),
           inProgress: true
         };
+
+        this.getFlights();
       });
 
   }
 
+  /**
+   * Get de flight list.
+   * @memberof ResultsComponent
+   */
   public getFlights(): void {
-    this.flightsManagerService.getFlights(this.model);
+    console.log(`${ResultsComponent.name}::getFlights`);
+
+    this.flightsManagerService.getFlights(this.model)
+      .then((data) => {
+        console.log(`${ResultsComponent.name}::getFlights (then) data %o`, data);
+
+      });
   }
 
 }

@@ -1,3 +1,12 @@
 $primary: #073590;
 $secondary: #F1C933;
 $primary-accent: #2994e6;
+$radius: 12px;
+
+html, 
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
+}
