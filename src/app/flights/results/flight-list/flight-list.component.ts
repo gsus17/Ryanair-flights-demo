@@ -1,7 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Flight } from '../../../flights.model';
-import { isArray } from 'util';
 
 @Component({
   selector: 'app-flight-list',
@@ -48,6 +47,11 @@ export class FlightListComponent implements OnInit {
   public hasFlightList(): boolean {
     const ret: boolean = this.flightList.flights.length > 0;
     return ret;
+  }
+
+  public selectFlight(flightSelected: Flight) {
+    console.log(`${FlightListComponent.name}::selectFlight flight %o`, flightSelected);
+    alert(`You has selected the price ${flightSelected.price}`);
   }
 
 }

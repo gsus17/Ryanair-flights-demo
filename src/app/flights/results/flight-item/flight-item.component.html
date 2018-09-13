@@ -11,7 +11,7 @@
       <span>{{iataTo}}</span>
     </div>
   </div>
-  <span fxLayout="row" fxLayoutAlign="end center" fxLayoutAlign.xs="center end" fxFlex="10">
+  <span fxLayout="row" fxLayoutAlign="end center" fxLayoutAlign.xs="center end" fxFlex="10" (click)="selectFlight()">
     <div fxLayoutAlign="center center" class="price-container">{{flight.price | currency}}</div>
   </span>
 </div>

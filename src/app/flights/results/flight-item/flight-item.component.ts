@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Flight } from '../../../../api/entitys/flights';
 
 @Component({
@@ -29,7 +29,16 @@ export class FlightItemComponent implements OnInit {
    */
   @Input() public iataTo: string;
 
-  constructor() { }
+  /**
+   * Emit selection flight event.
+   * @memberof FlightItemComponent
+   */
+  @Output() selectFlightEmitter = new EventEmitter<Flight>();
+
+  constructor() {
+    console.log(`${FlightItemComponent.name}::ctor`);
+
+  }
 
   ngOnInit() {
   }
@@ -41,6 +50,11 @@ export class FlightItemComponent implements OnInit {
 
     const ret = new Date();
     return ret.setMilliseconds(c);
+  }
+
+  public selectFlight() {
+    console.log(`${FlightItemComponent.name}::selectFlight flight %o`, this.flight);
+    this.selectFlightEmitter.emit(this.flight);
   }
 
 }
