@@ -1,7 +1,7 @@
-<div class="flight-box-container" fxLayout="row" fxLayoutAlign="space-between center">
+<div class="flight-box-container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center"
+  fxLayoutAlign.xs="center space-between">
   <div fxLayout="column" fxFlex="80">
-    <span>Ryanair</span>
-    <span fxLayout="row" fxLayoutAlign="center center">{{getHoursDiff() | date:'hh'}}</span>
+    <span fxLayout="row" fxLayoutAlign="center center">Hours {{getHoursDiff() | date:'hh mm'}} Mins</span>
     <div fxLayout="row" fxflex fxLayoutAlign="space-between center">
       <span>{{flight.dateFrom | date:'h:mm a'}}</span>
       <span>{{flight.dateTo | date:'h:mm a'}}</span>
@@ -11,7 +11,7 @@
       <span>{{iataTo}}</span>
     </div>
   </div>
-  <span fxLayout="row" fxLayoutAlign="end center" fxFlex="10">
+  <span fxLayout="row" fxLayoutAlign="end center" fxLayoutAlign.xs="center end" fxFlex="10">
     <div fxLayoutAlign="center center" class="price-container">{{flight.price | currency}}</div>
   </span>
 </div>

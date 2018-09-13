@@ -9,11 +9,7 @@
     <ng-container>
       <form fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column" fxFlex class="search-box-container" fxLayoutGap="20px">
-          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
-            <input type="radio" name="rountrip" value="idavuelta" checked [(ngModel)]="model.rountrip"> <span class="option-radio">Ida/vuelta</span><br>
-            <input type="radio" name="ida" value="ida"> <span class="option-radio">Ida</span><br>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
             <div class="route-container" fxLayout="row" fxFlex="75" fxLayoutAlign="space-between center">
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start" (click)="openPanel('from')">
@@ -34,7 +30,7 @@
               </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="end center">
-              <button  [disabled]="!checkAirports()" (click)="openSecondSection()" *ngIf="!showSecondSection()">Continuar</button>
+              <button [disabled]="!checkAirports()" (click)="openSecondSection()" *ngIf="!showSecondSection()">Continuar</button>
             </div>
           </div>
           <div *ngIf="showPanel()" class="pane" fxLayout="row">
@@ -59,8 +55,8 @@
               </div>
             </div>
           </div>
-          <div *ngIf="showSecondSection()" fxLayout="row" fxLayoutAlign="space-between center">
-            <div class="route-container" fxFlex="75" fxLayout="row" fxLayoutAlign="space-between center">
+          <div *ngIf="showSecondSection()" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+            <div class="route-container" fxLayout="row" fxFlex="75" fxLayout.xs="column" fxLayoutAlign="space-between center">
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start">
                   <span>Fecha de ida</span>

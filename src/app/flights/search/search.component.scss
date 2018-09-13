@@ -102,3 +102,17 @@ header {
   color: white;
   border-radius: 5px;
 }
+
+
+@media (max-width: 599px) {
+  .route-container {
+    display: initial !important;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 5000px) {
+  .route-container {
+    display: flex !important;
+  }
+}
