@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlightModel } from './flight.model';
 import { FlightsManagerService } from '../flights.manager.service';
+import { Flight } from '../../../api/entitys/flights';
 // tslint:disable:radix
 
 @Component({
@@ -35,14 +36,14 @@ export class ResultsComponent implements OnInit {
           iataTo: params['iataTo'],
           dateFrom: params['dateFrom'],
           dateTo: params['dateTo'],
-          child: parseInt(params['id']),
-          passengers: parseInt(params['id']),
+          child: parseInt(params['child']),
+          passengers: parseInt(params['passengers']),
+          flightList: [],
           inProgress: true
         };
 
         this.getFlights();
       });
-
   }
 
   /**
@@ -53,10 +54,20 @@ export class ResultsComponent implements OnInit {
     console.log(`${ResultsComponent.name}::getFlights`);
 
     this.flightsManagerService.getFlights(this.model)
-      .then((data) => {
+      .then((data: Flight[]) => {
         console.log(`${ResultsComponent.name}::getFlights (then) data %o`, data);
-
+        this.model.flightList = data;
+        this.model.inProgress = false;
       });
+  }
+
+  /**
+   * True if list is loaded.
+   * @returns {boolean}
+   * @memberof ResultsComponent
+   */
+  public isLoaded(): boolean {
+    return !this.model.inProgress;
   }
 
 }

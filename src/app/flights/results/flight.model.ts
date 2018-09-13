@@ -1,4 +1,5 @@
 import { FlightResquest } from '../../../api/entitys/flight-resquest';
+import { Flight } from '../../../api/entitys/flights';
 
 /**
  * Flight request.
@@ -7,4 +8,5 @@ import { FlightResquest } from '../../../api/entitys/flight-resquest';
  */
 export interface FlightModel extends FlightResquest {
     inProgress: boolean;
+    flightList: Flight[];
 }

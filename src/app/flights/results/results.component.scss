@@ -1,0 +1,19 @@
+@import 'src/styles.scss';
+
+header {
+  min-height: 60px;
+  background: linear-gradient(#2c2c85, #12367a);
+  padding: 20px;
+}
+
+.subheader {
+  min-height: 30px;
+  background-color: $primary-accent;
+  padding: 20px;
+  color: white
+}
+
+.ryanair-logo {
+  width: 150px;
+  height: 56px;
+}

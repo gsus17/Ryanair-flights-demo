@@ -1,3 +1,8 @@
-<p>
-  flight-list works!
-</p>
+<div class="list-container">
+  <span>{{iataFrom}} a {{iataTo}}</span>
+  <div *ngFor="let flight of flightList.flights">
+    <app-flight-item [flight]="flight" [iataTo]="iataTo" [iataFrom]="iataFrom"></app-flight-item>
+  </div>
+
+  <div *ngIf="!hasFlightList()"> No se han encontrado resultados. </div>
+</div>

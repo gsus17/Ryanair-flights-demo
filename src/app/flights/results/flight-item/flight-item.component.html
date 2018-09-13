@@ -1,3 +1,17 @@
-<p>
-  flight-item works!
-</p>
+<div class="flight-box-container" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="column" fxFlex="80">
+    <span>Ryanair</span>
+    <span fxLayout="row" fxLayoutAlign="center center">{{getHoursDiff() | date:'hh'}}</span>
+    <div fxLayout="row" fxflex fxLayoutAlign="space-between center">
+      <span>{{flight.dateFrom | date:'h:mm a'}}</span>
+      <span>{{flight.dateTo | date:'h:mm a'}}</span>
+    </div>
+    <div fxLayout="row" fxflex fxLayoutAlign="space-between center">
+      <span>{{iataFrom}}</span>
+      <span>{{iataTo}}</span>
+    </div>
+  </div>
+  <span fxLayout="row" fxLayoutAlign="end center" fxFlex="10">
+    <div fxLayoutAlign="center center" class="price-container">{{flight.price | currency}}</div>
+  </span>
+</div>

@@ -1,3 +1,13 @@
-<p>
-  results works!
-</p>
+<div fxLayout="column" fxFlex>
+  <header fxLayout="row" fxFlex fxLayoutAlign="start center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <img fxLayout="row" fxLayoutAlign="start center" class="ryanair-logo" src="../assets/images/ryanair-logo.svg">
+    </div>
+  </header>
+
+  <div class="subheader" fxLayout="row" fxFlex fxLayoutAlign="start center">
+    <span>{{model.iataFrom}} a {{model.iataTo}}</span> - <span>Pasajeros {{model.passengers}}</span> - <span>Niños {{model.child}}</span>
+  </div>
+
+  <app-flight-list *ngIf="isLoaded()" [flightList]="model.flightList" [iataTo]="model.iataTo" [iataFrom]="model.iataFrom"></app-flight-list>
+</div>

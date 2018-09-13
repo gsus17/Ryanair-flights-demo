@@ -1,0 +1,26 @@
+@import 'src/styles.scss';
+
+.flight-box-container {
+  padding: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  margin: 16px;
+  background-color: white;
+}
+
+.price-container {
+  background-color: $secondary;
+  color: $primary;
+  font-size: 24px;
+  padding: 7px 32px;
+  line-height: 1.42857143;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  margin-bottom: 0;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+}
