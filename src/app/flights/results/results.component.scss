@@ -17,3 +17,21 @@ header {
   width: 150px;
   height: 56px;
 }
+
+
+svg path,
+svg rect {
+  fill: $secondary;
+}
+
+
+.loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
