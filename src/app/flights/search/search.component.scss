@@ -18,6 +18,20 @@ header {
   background-color: $primary-accent;
 }
 
+.country-disable {
+  color: gray;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.country-available {
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .search-box-container button {
   background-color: $secondary;
   color: $primary;
@@ -65,7 +79,7 @@ header {
   background: 0 0;
 }
 
-.search-box-container>input[type=radio]:checked {
+.search-box-container > input[type=radio]:checked {
   background-color: $secondary;
 }
 
@@ -102,15 +116,12 @@ header {
   color: white;
   border-radius: 5px;
 }
-
-
 @media (max-width: 599px) {
   .route-container {
     display: initial !important;
     padding: 16px;
   }
 }
-
 @media (min-width: 600px) and (max-width: 5000px) {
   .route-container {
     display: flex !important;

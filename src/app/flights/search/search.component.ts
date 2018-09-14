@@ -63,10 +63,13 @@ export class SearchComponent implements OnInit {
       airportList: [],
       airportsByIatacode: [],
       countries: [],
+      routes: [],
       showPanel: false,
       showSecondSection: false,
       selection: 'from'
     };
+
+    this.getAirportList();
   }
 
   /**
@@ -95,7 +98,7 @@ export class SearchComponent implements OnInit {
    */
   public openPanel(selection: string) {
     this.viewdata.selection = selection;
-    this.getAirportList();
+    this.viewdata.showPanel = true;
   }
 
   /**
@@ -109,6 +112,22 @@ export class SearchComponent implements OnInit {
       const ret = item.country.name === countryName;
       return ret;
     });
+  }
+
+  /**
+   * True if the iataCode exist inside list available.
+   * @param {string} countryName
+   * @returns {boolean}
+   * @memberof SearchComponent
+   */
+  public countryIsDisable(countryName: string): boolean {
+    console.log(`${SearchComponent.name}::getAirportList`);
+    const list = this.viewdata.airportList.filter((item: any) => {
+      const ret = item.country.name === countryName;
+      return ret;
+    });
+
+    return list.length < 1;
   }
 
   /**
@@ -137,6 +156,15 @@ export class SearchComponent implements OnInit {
     console.log(`${SearchComponent.name}::selectAirport`);
     if (this.viewdata.selection === 'from') {
       this.model.from = airport;
+      const routesAvaible: string[] = this.viewdata.routes[airport.iataCode];
+      const newList = [];
+      this.viewdata.airportList.forEach((item) => {
+        if (this.viewdata.routes[airport.iataCode].indexOf(item.iataCode) > -1) {
+          newList.push(item);
+        }
+      });
+
+      this.viewdata.airportList = newList;
     } else if (this.viewdata.selection === 'to') {
       this.model.to = airport;
     }
@@ -184,8 +212,8 @@ export class SearchComponent implements OnInit {
       .then((data: AirportsResponse) => {
         console.log(`${SearchComponent.name}::getAirportList (then) data %o`, data);
         this.viewdata.airportList = data.airports;
+        this.viewdata.routes = this.viewdata.routes.length === 0 ? data.routes : this.viewdata.routes;
         this.viewdata.countries = data.countries;
-        this.viewdata.showPanel = true;
       });
   }
 

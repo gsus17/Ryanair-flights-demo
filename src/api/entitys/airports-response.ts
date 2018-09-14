@@ -6,6 +6,7 @@
 export interface AirportsResponse {
     airports: Airports[];
     countries: Countries[];
+    routes: string[];
 }
 
 /**

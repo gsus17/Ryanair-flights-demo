@@ -14,7 +14,8 @@
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start" (click)="openPanel('from')">
                   <span>De</span>
-                  <input class="input-city" type="text" name="from" placeholder="Aeropuerto de Origen" [(ngModel)]="model.from.name">
+                  <input class="input-city pointer" type="text" name="from" placeholder="Aeropuerto de Origen"
+                    [(ngModel)]="model.from.name">
                 </div>
               </div>
               <div fxLayout="row" fxFlex="10" fxLayoutAlign="center center">
@@ -25,12 +26,13 @@
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start" (click)="openPanel('to')">
                   <span>Hasta</span>
-                  <input class="input-city" type="text" name="to" placeholder="Aeropuerto de destino" [(ngModel)]="model.to.name">
+                  <input class="input-city pointer" type="text" name="to" placeholder="Aeropuerto de destino"
+                    [(ngModel)]="model.to.name">
                 </div>
               </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="end center">
-              <button [disabled]="!checkAirports()" (click)="openSecondSection()" *ngIf="!showSecondSection()">Continuar</button>
+              <button [disabled]="!checkAirports()" class="pointer" (click)="openSecondSection()" *ngIf="!showSecondSection()">Continuar</button>
             </div>
           </div>
           <div *ngIf="showPanel()" class="pane" fxLayout="row">
@@ -41,7 +43,8 @@
                 </span>
               </div>
               <div *ngFor="let countrie of viewdata.countries">
-                <span [ngClass]="{'country-selected' : countryIsSelected(countrie.name)}" (click)="searchAirports(countrie.name)">{{countrie.name}}</span>
+                <span [ngClass]="{'country-selected' : countryIsSelected(countrie.name) ,'country-disable' : countryIsDisable(countrie.name), 'country-available' : !countryIsDisable(countrie.name)}"
+                  (click)="searchAirports(countrie.name)">{{countrie.name}}</span>
               </div>
             </div>
             <div fxLayout="column" fxLayoutAlign="start start" fxFlex="30">
@@ -51,7 +54,7 @@
                 </span>
               </div>
               <div *ngFor="let airport of viewdata.airportsByIatacode">
-                <span (click)="selectAirport(airport)">{{airport.name}}</span>
+                <span class="pointer" (click)="selectAirport(airport)">{{airport.name}}</span>
               </div>
             </div>
           </div>
@@ -81,7 +84,7 @@
             </div>
 
             <div fxLayout="row" fxFlex="15" fxLayoutAlign="end center">
-              <button (click)="redirect()">Vamos</button>
+              <button class="pointer" (click)="redirect()">Vamos</button>
             </div>
           </div>
         </div>

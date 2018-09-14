@@ -9,6 +9,7 @@ import { Countries } from '../../airports.model';
 export interface SearchViewdata {
     airportList: Airports[];
     airportsByIatacode: Airports[];
+    routes: string[];
     countries: Countries[];
     showPanel: boolean;
     selection: string;
