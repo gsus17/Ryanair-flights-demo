@@ -107,7 +107,7 @@ export class SearchComponent implements OnInit {
    * @memberof SearchComponent
    */
   public searchAirports(countryName: string) {
-    console.log(`${SearchComponent.name}::getAirportList`);
+    console.log(`${SearchComponent.name}::searchAirports`);
     this.viewdata.airportsByIatacode = this.viewdata.airportList.filter((item: any) => {
       const ret = item.country.name === countryName;
       return ret;
@@ -121,7 +121,6 @@ export class SearchComponent implements OnInit {
    * @memberof SearchComponent
    */
   public countryIsDisable(countryName: string): boolean {
-    console.log(`${SearchComponent.name}::getAirportList`);
     const list = this.viewdata.airportList.filter((item: any) => {
       const ret = item.country.name === countryName;
       return ret;

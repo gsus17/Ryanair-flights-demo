@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { appRoutes } from './app-routes-config';
 import { FlightsModule } from './flights/flights.module';
 import { ApiModule } from '../api/api.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     ApiModule,
     FlightsModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

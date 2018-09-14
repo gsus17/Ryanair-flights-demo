@@ -5,9 +5,7 @@ import { ResultsModule } from './results/results.module';
 import { FlightsManagerService } from './flights.manager.service';
 @NgModule({
   imports: [
-    CommonModule,
-    SearchModule,
-    ResultsModule
+    CommonModule
   ],
   declarations: [],
   providers: [FlightsManagerService]

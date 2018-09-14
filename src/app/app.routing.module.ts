@@ -1,6 +1,5 @@
-import { Routes } from '../../node_modules/@angular/router';
-import { SearchComponent } from './flights/search/search.component';
-import { ResultsComponent } from './flights/results/results.component';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 export const appRoutes: Routes = [
 
@@ -15,7 +14,12 @@ export const appRoutes: Routes = [
 
     {
         path: '',
-        redirectTo: '/home',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
 ];
+@NgModule({
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
