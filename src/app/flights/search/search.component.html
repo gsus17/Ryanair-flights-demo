@@ -63,7 +63,7 @@
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start">
                   <span>Fecha de ida</span>
-                  <input type="date" class="input-city" id="dateFrom" [ngModel]="model.dateFrom | date:'yyyy-MM-dd'"
+                  <input type="date" class="input-city" min="viewdata.dateNow" id="dateFrom" [ngModel]="model.dateFrom | date:'yyyy-MM-dd'"
                     (ngModelChange)="model.dateFrom  = $event" name="dateFrom">
                 </div>
               </div>
@@ -71,7 +71,7 @@
               <div fxFlex fxLayout="row" fxLayoutAlign="start center">
                 <div fxLayout="column" fxLayoutAlign="center start">
                   <span>Fecha de vuelta</span>
-                  <input type="date" class="input-city" id="dateTo" [ngModel]="model.dateTo | date:'yyyy-MM-dd'"
+                  <input type="date" min="viewdata.dateNow" class="input-city" id="dateTo" [ngModel]="model.dateTo | date:'yyyy-MM-dd'"
                     (ngModelChange)="model.dateTo = $event" name="dateTo">
                 </div>
               </div>

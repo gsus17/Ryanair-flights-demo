@@ -55,7 +55,7 @@ export class SearchComponent implements OnInit {
       dateFrom: new Date(),
       dateTo: new Date(),
       child: 0,
-      passengers: 0,
+      passengers: 1,
       rountrip: true
     };
 
@@ -66,7 +66,8 @@ export class SearchComponent implements OnInit {
       routes: [],
       showPanel: false,
       showSecondSection: false,
-      selection: 'from'
+      selection: 'from',
+      dateNow: new Date()
     };
 
     this.getAirportList();
@@ -215,7 +216,4 @@ export class SearchComponent implements OnInit {
         this.viewdata.countries = data.countries;
       });
   }
-
-
-
 }

@@ -43,6 +43,11 @@ export class FlightItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Return the difference in milliseconds.
+   * @returns
+   * @memberof FlightItemComponent
+   */
   public getHoursDiff() {
     const a: any = new Date(this.flight.dateFrom);
     const b: any = new Date(this.flight.dateTo);
@@ -52,6 +57,10 @@ export class FlightItemComponent implements OnInit {
     return ret.setMilliseconds(c);
   }
 
+  /**
+   * Select a flight.
+   * @memberof FlightItemComponent
+   */
   public selectFlight() {
     console.log(`${FlightItemComponent.name}::selectFlight flight %o`, this.flight);
     this.selectFlightEmitter.emit(this.flight);

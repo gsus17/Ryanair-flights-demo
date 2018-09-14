@@ -14,4 +14,5 @@ export interface SearchViewdata {
     showPanel: boolean;
     selection: string;
     showSecondSection: boolean;
+    dateNow: Date;
 }

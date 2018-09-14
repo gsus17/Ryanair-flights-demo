@@ -49,6 +49,11 @@ export class FlightListComponent implements OnInit {
     return ret;
   }
 
+  /**
+   * Select a flight.
+   * @param {Flight} flightSelected
+   * @memberof FlightListComponent
+   */
   public selectFlight(flightSelected: Flight) {
     console.log(`${FlightListComponent.name}::selectFlight flight %o`, flightSelected);
     alert(`You has selected the price ${flightSelected.price}`);
